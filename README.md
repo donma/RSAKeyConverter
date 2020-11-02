@@ -20,3 +20,6 @@ base on .Net Core 3.1 WPF
 
 
 
+
+
+[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
