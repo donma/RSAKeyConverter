@@ -1,0 +1,27 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Create RSA XML Key";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Create RSA XML Key</h1>
+    <p>
+
+        <div class="col-12 text-left">
+
+            <span id="basic-addon1">Public Key XML : </span>
+            <div>
+                <textarea class="col-12" rows="10">@Html.Raw(Model.PubKey)</textarea>
+            </div>
+        </div>
+        <hr />
+        <div class="col-12 text-left">
+
+            <span id="basic-addon1">Private Key XML : </span>
+            <div>
+                <textarea class="col-12" rows="20">@Html.Raw(Model.PrivateKey)</textarea>
+            </div>
+        </div>
+    </p>
+</div>

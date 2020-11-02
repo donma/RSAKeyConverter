@@ -1,0 +1,35 @@
+﻿@page
+@model RSAKeyConverter.Pages.XmlToPemModel
+@{
+    ViewData["Title"] = "RSA XML TO PEM";
+}
+
+<div class="text-center">
+    <h1 class="display-4">XML To PEM</h1>
+
+
+    <div class="col-12 text-left">
+
+        <span id="basic-addon1">RSA Private or Public XML Key : </span>
+        <div>
+            <form method="post">
+                <textarea class="col-12" rows="20" name="xmldata">@Html.Raw(Model.XMLData)</textarea>
+
+                <div class="text-right">
+                    <button type="submit" class="btn bg-danger" style="color:white" asp-page-handler="ConvertPEM"  onclick="Submit()" >Convert</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-12 text-left" style="margin-top:20px">
+
+        <span id="basic-addon1">Convert To PEM Result : </span>
+        <div>
+            <textarea class="col-12" rows="20">@Html.Raw(Model.PEMData)</textarea>
+        </div>
+    </div>
+
+
+    @Html.Raw(Model.ErrorJS)
+</div>
