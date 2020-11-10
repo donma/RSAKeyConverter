@@ -19,7 +19,7 @@ Reference:
 https://download.csdn.net/download/woailiyue1/11846002
 https://stackoverflow.com/questions/53997902/how-to-get-rsacryptoserviceprovider-public-and-private-key-only-in-c-sharp
 
-base on .Net Core 3.1 WPF
+base on .Net Core 3.1 
 
 ![alt SampleResult](https://raw.githubusercontent.com/gitozhack/blogimage/master/raskeys/snap1604285879.jpg)
 
