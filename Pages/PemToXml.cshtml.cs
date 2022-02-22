@@ -27,24 +27,31 @@ namespace RSAKeyConverter.Pages
             RSACryptoServiceProvider provider = new RSACryptoServiceProvider();
             try
             {
-                if (pemdata.Contains("PUBLIC KEY-----"))
+                if (pemdata.Contains("-----BEGIN PUBLIC KEY-----"))
                 {
                     var ber = PemToBer(pemdata, "PUBLIC KEY");
                     provider.ImportSubjectPublicKeyInfo(ber, out _);
 
                     XMLData = provider.ToXmlString(false);
                 }
+                else if (pemdata.Contains("-----BEGIN RSA PRIVATE KEY-----"))
+                {
+                    var ber = PemToBer(pemdata, "RSA PRIVATE KEY");
+                    provider.ImportRSAPrivateKey(ber, out _);
 
-                else if (pemdata.Contains("PRIVATE KEY-----"))
+                    XMLData = provider.ToXmlString(true);
+                }
+                else if (pemdata.Contains("-----BEGIN PRIVATE KEY-----"))
                 {
                     var ber = PemToBer(pemdata, "PRIVATE KEY");
                     provider.ImportPkcs8PrivateKey(ber, out _);
 
                     XMLData = provider.ToXmlString(true);
                 }
+                
                 else
                 {
-                    ErrorJS = "<script>toastr.error('Must be contain PRIVATE KEY----- or PUBLIC KEY-----');</script>";
+                    ErrorJS = "<script>toastr.error('Must be contain PRIVATE KEY----- or PUBLIC KEY----- or RSA PRIVATE KEY-----');</script>";
                 }
             }
             catch (Exception ex)
@@ -59,6 +66,7 @@ namespace RSAKeyConverter.Pages
         {
             // Technically these should include a newline at the end,
             // and either newline-or-beginning-of-data at the beginning.
+            //RSA PRIVATE KEY
             string begin = $"-----BEGIN {header}-----";
             string end = $"-----END {header}-----";
 
