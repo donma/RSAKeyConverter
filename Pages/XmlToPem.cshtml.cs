@@ -45,7 +45,7 @@ namespace RSAKeyConverter.Pages
                     PEMData = MakePem(ber, "PRIVATE KEY");
 
                     var berRSA = provider.ExportRSAPrivateKey();
-                    RSAData = MakePem(ber, "RSA PRIVATE KEY");
+                    RSAData = MakePem(berRSA, "RSA PRIVATE KEY");
                 }
             }
             catch(Exception ex) {
