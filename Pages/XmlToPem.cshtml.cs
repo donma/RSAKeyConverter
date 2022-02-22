@@ -37,12 +37,11 @@ namespace RSAKeyConverter.Pages
                 {
                     ber = provider.ExportSubjectPublicKeyInfo();
                     PEMData = MakePem(ber, "PUBLIC KEY");
-
                 }
                 else
                 {
-                    ber = provider.ExportPkcs8PrivateKey();
-                    PEMData = MakePem(ber, "PRIVATE KEY");
+                    ber = provider.ExportRSAPrivateKey();
+                    PEMData = MakePem(ber, "RSA PRIVATE KEY");
                 }
             }
             catch(Exception ex) {
