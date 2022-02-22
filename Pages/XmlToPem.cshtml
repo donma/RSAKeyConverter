@@ -16,7 +16,7 @@
                 <textarea class="col-12" rows="20" name="xmldata">@Html.Raw(Model.XMLData)</textarea>
 
                 <div class="text-right">
-                    <button type="submit" class="btn bg-danger" style="color:white" asp-page-handler="ConvertPEM"  onclick="Submit()" >Convert</button>
+                    <button type="submit" class="btn bg-danger" style="color:white" asp-page-handler="ConvertPEM" onclick="Submit()">Convert</button>
                 </div>
             </form>
         </div>
@@ -24,9 +24,17 @@
 
     <div class="col-12 text-left" style="margin-top:20px">
 
-        <span id="basic-addon1">Convert To PEM Result : </span>
+        <span id="basic-addon1">Convert To PEM Result(Pkcs8) : </span>
         <div>
             <textarea class="col-12" rows="20">@Html.Raw(Model.PEMData)</textarea>
+        </div>
+    </div>
+
+    <div class="col-12 text-left" style="margin-top:20px">
+
+        <span id="basic-addon1">Convert To PEM Result(RSA Key) : </span>
+        <div>
+            <textarea class="col-12" rows="20">@Html.Raw(Model.RSAData)</textarea>
         </div>
     </div>
 

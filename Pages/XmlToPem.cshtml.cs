@@ -17,6 +17,7 @@ namespace RSAKeyConverter.Pages
 
         public string XMLData { get; set; }
 
+        public string RSAData { get; set; }
         public string ErrorJS { get; set; }
         public void OnGet()
         {
@@ -40,8 +41,11 @@ namespace RSAKeyConverter.Pages
                 }
                 else
                 {
-                    ber = provider.ExportRSAPrivateKey();
-                    PEMData = MakePem(ber, "RSA PRIVATE KEY");
+                    ber = provider.ExportPkcs8PrivateKey();
+                    PEMData = MakePem(ber, "PRIVATE KEY");
+
+                    var berRSA = provider.ExportRSAPrivateKey();
+                    RSAData = MakePem(ber, "RSA PRIVATE KEY");
                 }
             }
             catch(Exception ex) {
