@@ -4,8 +4,6 @@
 
 整理了一下索性就是直接公開，如果有興趣或是不放心外面工具的，就自己檢查程式碼，或是佈署再自己內網主機上面
 
-[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
-
 Github Source:
 
 https://github.com/donma/RSAKeyConverter
